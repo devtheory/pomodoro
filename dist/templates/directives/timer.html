@@ -2,11 +2,11 @@
   <h1 class="timer">{{timer | timecode}}</h1>
   <p>{{activity}}</p>
 
-  <button class="button" ng-click="startSession('Working', 1500)">
+  <button class="button" ng-hide="canTakeBreak" ng-click="startSession('Working', 1500)">
     <span ng-hide="isCounting">Work for 25 minutes</span>
     <span ng-show="isCounting">STOP</span>
   </button>
-  <button class="button" ng-click="startSession('Resting', 300)">
+  <button class="button" ng-show="canTakeBreak" ng-click="startSession('Resting', 300)">
     <span ng-hide="isCounting">Rest for 5 minutes</span>
     <span ng-show="isCounting">STOP</span>
   </button>
