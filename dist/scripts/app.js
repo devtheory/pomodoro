@@ -16,6 +16,11 @@
         url: '/about',
         controller: 'AboutCtrl as about',
         templateUrl: 'templates/about.html'
+      })
+      .state('dashboard', {
+        url: '/dashboard',
+        controller: 'DashboardCtrl as dashboard',
+        templateUrl: 'templates/dashboard.html'
       });
   }
 

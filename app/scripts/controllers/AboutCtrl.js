@@ -1,6 +1,6 @@
 (function(){
   function AboutCtrl(){
-    console.log('about hit');
+    
   }
 
   angular
