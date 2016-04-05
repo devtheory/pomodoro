@@ -55,6 +55,7 @@
           $interval.cancel(promise);
           scope.isCounting = false;
           scope.numberOfSessions++;
+          document.getElementById('player').play();
           if(scope.typeOfSession == "Working")
             scope.numberOfWorkSessions++;
         };
