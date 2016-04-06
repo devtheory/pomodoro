@@ -1,25 +1,26 @@
 <div class="row row-offcanvas row-offcanvas-left">
 
-  <div class="col-xs-6 col-sm-2 sidebar-offcanvas" id="sidebar" role="navigation">
-      <ul class="nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Link 1</a></li>
-        <li><a href="#">Link 2</a></li>
-        <li><a href="#">Link 3</a></li>
+  <div ng-controller="TasksCtrl as taskCtrl" class="col-xs-6 col-sm-2 sidebar-offcanvas" id="sidebar" role="navigation" >
+      <ul class="nav list-group">
+        <h5>New Task</h5>
+        <li class="list-group-item">
+          <form id="taskForm" ng-submit="taskCtrl.addTask(task)" class="form-group">
+            <input ng-model="taskCtrl.task" class="form-control" style="margin-bottom:2px;" />
+            <input type="submit" value="Create task" class="form-control btn btn-primary btn-xs" />
+          </form>
+        </li>
+        <li class="list-group-item" ng-repeat="task in taskCtrl.tasks | orderBy: '-created_at'">
+          {{task.task_name}}
+          <span class="badge"><i ng-click="taskCtrl.removeTask(task)" class="glyphicon glyphicon-remove"></i></span>
+        </li>
       </ul>
   </div>
 
   <timer></timer>
-  <h5>Tasks</h5>
-  <div ng-controller="TasksCtrl as taskCtrl">
-    <form id="taskForm" ng-submit="taskCtrl.addTask(task)">
-      <input ng-model="taskCtrl.task" />
-      <input type="submit" value="Submit" />
-    </form>
-    <div ng-repeat="task in taskCtrl.tasks">
-      {{task.task_name}}
-      <button ng-click="taskCtrl.removeTask(task)"></button>
-    </div>
+
+  <div >
+
+
   </div>
 </div>
 

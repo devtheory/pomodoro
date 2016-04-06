@@ -4,7 +4,7 @@
     this.tasks = Tasks.list;
 
     this.addTask = function(){
-      Tasks.list.$add({task_name: this.task});
+      Tasks.list.$add({task_name: this.task, created_at: Date.now()});
       this.task = "";
     };
 
