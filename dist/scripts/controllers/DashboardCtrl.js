@@ -18,11 +18,11 @@
     return minutes + ":" + seconds
   };
 
-  function DashboardCtrl(){
-
+  function DashboardCtrl(Tasks){
+    
   }
 
   angular
     .module('pomodoro')
-    .controller('DashboardCtrl', DashboardCtrl);
+    .controller('DashboardCtrl', ['Tasks', DashboardCtrl]);
 })();

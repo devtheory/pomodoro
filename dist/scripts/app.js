@@ -25,6 +25,7 @@
   }
 
   angular
-    .module('pomodoro', ['ui.router'])
-    .config(config);
+    .module('pomodoro', ['ui.router', 'firebase'])
+    .config(config)
+    .constant('FIREBASE_URL', 'https://devtheory-pomodoro.firebaseio.com/tasks');
 })();

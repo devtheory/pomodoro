@@ -10,6 +10,17 @@
   </div>
 
   <timer></timer>
+  <h5>Tasks</h5>
+  <div ng-controller="TasksCtrl as taskCtrl">
+    <form id="taskForm" ng-submit="taskCtrl.addTask(task)">
+      <input ng-model="taskCtrl.task" />
+      <input type="submit" value="Submit" />
+    </form>
+    <div ng-repeat="task in taskCtrl.tasks">
+      {{task.task_name}}
+      <button ng-click="taskCtrl.removeTask(task)"></button>
+    </div>
+  </div>
 </div>
 
 
